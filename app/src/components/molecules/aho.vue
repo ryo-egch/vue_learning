@@ -1,15 +1,21 @@
 <template>
   <div class="hello">
-    <counter />
+    <Img v-show="isAho" url="https://stickershop.line-scdn.net/stickershop/v1/product/1785863/LINEStorePC/main.png;compress=true"/>
   </div>
 </template>
 
+
 <script>
-import counter from '../molecules/counter.vue'
+import store from '../../store/store.js'
+import Img from '../atoms/image.vue'
 export default {
-  name: 'Hello',
   components: {
-    counter,
+    Img
+  },
+  computed: {
+    isAho() {
+      return (store.getters.getCount > 0 && store.getters.getCount % 3 === 0)
+    }
   }
 }
 </script>

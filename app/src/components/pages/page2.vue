@@ -1,15 +1,18 @@
 <template>
   <div class="hello">
-    <counter />
+    <counter2 />
+    <aho />
   </div>
 </template>
 
 <script>
-import counter from '../molecules/counter.vue'
+import counter2 from '../molecules/counter2.vue'
+import aho from '../molecules/aho.vue'
 export default {
-  name: 'Hello',
+  name: 'Page2',
   components: {
-    counter,
+    counter2,
+    aho
   }
 }
 </script>
