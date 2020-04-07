@@ -1,0 +1,14 @@
+service: temp
+runtime: python27
+api_version: 1
+threadsafe: true
+
+default_expiration: "0"
+handlers:
+  - url: /(.*\..+)$
+    static_files: app/dist/\1
+    upload: app/dist/(.*\..+)$
+
+  - url: /.*
+    static_files: app/dist/index.html
+    upload: app/dist/index.html

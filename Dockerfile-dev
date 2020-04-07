@@ -1,0 +1,16 @@
+FROM node:10.16.3-alpine
+
+RUN apk update
+
+# Install Node.js and npm
+RUN apk add --update nodejs npm
+
+RUN mkdir /app
+COPY ./app /app
+WORKDIR /app
+
+RUN rm -rf node_modules
+RUN npm install
+RUN npm install --global vue-cli
+
+EXPOSE 8080
